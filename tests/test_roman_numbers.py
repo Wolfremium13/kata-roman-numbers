@@ -25,3 +25,11 @@ class TestRomanNumbersToInteger:
         assert_that(roman_to_int("CCC")).is_equal_to(300)
         assert_that(roman_to_int("MM")).is_equal_to(2000)
         assert_that(roman_to_int("MMM")).is_equal_to(3000)
+
+    def test_subtract_roman_numbers(self):
+        assert_that(roman_to_int("IV")).is_equal_to(4)
+        assert_that(roman_to_int("IX")).is_equal_to(9)
+        assert_that(roman_to_int("XL")).is_equal_to(40)
+        assert_that(roman_to_int("XC")).is_equal_to(90)
+        assert_that(roman_to_int("CD")).is_equal_to(400)
+        assert_that(roman_to_int("CM")).is_equal_to(900)
