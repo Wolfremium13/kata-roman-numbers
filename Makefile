@@ -14,7 +14,7 @@ setup: .venv/lib  ## Install virtualenv dependencies
 .PHONY: tests
 tests:  ## Locally run tests
 	$(PIPENV) clean
-	$(PIPENV_SAFE_RUN) pytest --verbose
+	$(PIPENV_SAFE_RUN) pytest --verbose -s --hypothesis-verbosity=debug
 
 .PHONY: lint
 lint:   ## Lint the project files
