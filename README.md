@@ -1,4 +1,10 @@
-# 🐍 Python TDD Boilerplate
+# 🐍 Roman Numbers Kata
+
+## 📝 Description
+
+This is a simple kata to practice TDD and Python.
+
+- [context](docs/roman-numbers.md)
 
 ## 🧑‍🏭 Setup
 
