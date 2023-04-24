@@ -1,6 +1,7 @@
 import hypothesis.strategies as st
 from assertpy import assert_that
 from hypothesis import given
+import pytest
 
 from src.roman_numbers import ROMAN_NUMBERS, roman_to_int
 
@@ -54,3 +55,17 @@ def __get_expected_from_roman_number(roman_number) -> int:
         expected += value - 2 * prev_value if value > prev_value else value
         prev_value = value
     return expected
+
+@pytest.mark.parametrize("roman_number, expected", [
+    ("I", 1),
+    ("IV", 4),
+    ("IX", 9),
+    ("XII", 12),
+    ("XXXVIII", 38),
+    ("LXVII", 67),
+    ("XCIX", 99),
+    ("CDXLIV", 444),
+    ("MCMXCVIII", 1998)
+])
+def test_sum_roman_numbers_with_different_letters_pytest(roman_number, expected):
+    assert_that(roman_to_int(roman_number)).is_equal_to(expected)
