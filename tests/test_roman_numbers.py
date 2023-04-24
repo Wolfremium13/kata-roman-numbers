@@ -15,4 +15,13 @@ class TestRomanNumbersToInteger:
         assert_that(roman_to_int("C")).is_equal_to(100)
         assert_that(roman_to_int("D")).is_equal_to(500)
         assert_that(roman_to_int("M")).is_equal_to(1000)
-    
+
+    def test_sum_roman_numbers_with_the_same_letters(self):
+        assert_that(roman_to_int("II")).is_equal_to(2)
+        assert_that(roman_to_int("III")).is_equal_to(3)
+        assert_that(roman_to_int("XX")).is_equal_to(20)
+        assert_that(roman_to_int("XXX")).is_equal_to(30)
+        assert_that(roman_to_int("CC")).is_equal_to(200)
+        assert_that(roman_to_int("CCC")).is_equal_to(300)
+        assert_that(roman_to_int("MM")).is_equal_to(2000)
+        assert_that(roman_to_int("MMM")).is_equal_to(3000)
