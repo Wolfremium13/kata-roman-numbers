@@ -10,25 +10,29 @@ def test_ignore_empty_roman_number():
     assert_that(roman_to_int("")).is_equal_to(0)
 
 
-def test_parse_roman_numbers():
-    assert_that(roman_to_int("I")).is_equal_to(1)
-    assert_that(roman_to_int("V")).is_equal_to(5)
-    assert_that(roman_to_int("X")).is_equal_to(10)
-    assert_that(roman_to_int("L")).is_equal_to(50)
-    assert_that(roman_to_int("C")).is_equal_to(100)
-    assert_that(roman_to_int("D")).is_equal_to(500)
-    assert_that(roman_to_int("M")).is_equal_to(1000)
+@pytest.mark.parametrize(
+    "roman_number, expected",
+    [("I", 1), ("V", 5), ("X", 10), ("L", 50), ("C", 100), ("D", 500), ("M", 1000)],
+)
+def test_parse_roman_numbers(roman_number, expected):
+    assert_that(roman_to_int(roman_number)).is_equal_to(expected)
 
 
-def test_sum_roman_numbers_with_the_same_letters():
-    assert_that(roman_to_int("II")).is_equal_to(2)
-    assert_that(roman_to_int("III")).is_equal_to(3)
-    assert_that(roman_to_int("XX")).is_equal_to(20)
-    assert_that(roman_to_int("XXX")).is_equal_to(30)
-    assert_that(roman_to_int("CC")).is_equal_to(200)
-    assert_that(roman_to_int("CCC")).is_equal_to(300)
-    assert_that(roman_to_int("MM")).is_equal_to(2000)
-    assert_that(roman_to_int("MMM")).is_equal_to(3000)
+@pytest.mark.parametrize(
+    "roman_number, expected",
+    [
+        ("II", 2),
+        ("III", 3),
+        ("XX", 20),
+        ("XXX", 30),
+        ("CC", 200),
+        ("CCC", 300),
+        ("MM", 2000),
+        ("MMM", 3000),
+    ],
+)
+def test_sum_roman_numbers_with_the_same_letters(roman_number, expected):
+    assert_that(roman_to_int(roman_number)).is_equal_to(expected)
 
 
 def test_subtract_roman_numbers():
@@ -56,16 +60,20 @@ def __get_expected_from_roman_number(roman_number) -> int:
         prev_value = value
     return expected
 
-@pytest.mark.parametrize("roman_number, expected", [
-    ("I", 1),
-    ("IV", 4),
-    ("IX", 9),
-    ("XII", 12),
-    ("XXXVIII", 38),
-    ("LXVII", 67),
-    ("XCIX", 99),
-    ("CDXLIV", 444),
-    ("MCMXCVIII", 1998)
-])
+
+@pytest.mark.parametrize(
+    "roman_number, expected",
+    [
+        ("I", 1),
+        ("IV", 4),
+        ("IX", 9),
+        ("XII", 12),
+        ("XXXVIII", 38),
+        ("LXVII", 67),
+        ("XCIX", 99),
+        ("CDXLIV", 444),
+        ("MCMXCVIII", 1998),
+    ],
+)
 def test_sum_roman_numbers_with_different_letters_pytest(roman_number, expected):
     assert_that(roman_to_int(roman_number)).is_equal_to(expected)
