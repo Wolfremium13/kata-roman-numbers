@@ -1,3 +1,4 @@
+import unittest
 import hypothesis.strategies as st
 from assertpy import assert_that
 from hypothesis import given
@@ -50,7 +51,7 @@ def test_sum_roman_numbers_with_different_letters(roman_number: str):
 
     assert_that(roman_to_int(roman_number)).is_equal_to(expected)
 
-
+# This is an anti-pattern, but it's useful to show how to parametrize a test
 def __get_expected_from_roman_number(roman_number) -> int:
     expected = 0
     prev_value = 0
