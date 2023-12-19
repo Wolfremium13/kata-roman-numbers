@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kata-roman-numbers", "kata-roman-numbers\kata-roman-numbers.csproj", "{B6840337-97E3-48F4-954B-58BA246FA3C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6840337-97E3-48F4-954B-58BA246FA3C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6840337-97E3-48F4-954B-58BA246FA3C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6840337-97E3-48F4-954B-58BA246FA3C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6840337-97E3-48F4-954B-58BA246FA3C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
