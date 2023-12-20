@@ -16,5 +16,11 @@ namespace kata_roman_numbers
             Assert.That(RomanNumberConverter.Convert(500), Is.EqualTo("D"));
             Assert.That(RomanNumberConverter.Convert(1000), Is.EqualTo("M"));
         }
+        
+        [Test]
+        public void support_adding()
+        {
+            Assert.That(RomanNumberConverter.Convert(2), Is.EqualTo("II"));
+        }
     }
 }
