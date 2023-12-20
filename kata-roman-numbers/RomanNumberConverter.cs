@@ -12,6 +12,10 @@ namespace kata_roman_numbers
             {
                 return "X";
             }
+            if (givenNumber == 50)
+            {
+                return "L";
+            }
             return givenNumber == 2 ? "II" : "I";
         }
     }
