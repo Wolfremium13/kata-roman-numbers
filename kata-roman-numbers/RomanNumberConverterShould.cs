@@ -8,6 +8,7 @@ namespace kata_roman_numbers
         [Test]
         public void convert_decimal_to_roman()
         {
+            Assert.That(RomanNumberConverter.Convert(0), Is.EqualTo(""));
             Assert.That(RomanNumberConverter.Convert(1), Is.EqualTo("I"));
             Assert.That(RomanNumberConverter.Convert(5), Is.EqualTo("V"));
             Assert.That(RomanNumberConverter.Convert(10), Is.EqualTo("X"));
