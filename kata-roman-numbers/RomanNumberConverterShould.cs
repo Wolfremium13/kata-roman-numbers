@@ -13,6 +13,7 @@ namespace kata_roman_numbers
             Assert.That(RomanNumberConverter.Convert(5), Is.EqualTo("V"));
             Assert.That(RomanNumberConverter.Convert(10), Is.EqualTo("X"));
             Assert.That(RomanNumberConverter.Convert(50), Is.EqualTo("L"));
+            Assert.That(RomanNumberConverter.Convert(100), Is.EqualTo("C"));
         }
     }
 }
