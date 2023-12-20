@@ -39,5 +39,11 @@ namespace kata_roman_numbers
         {
             Assert.That(RomanNumberConverter.Convert(givenNumber), Is.EqualTo(expectedRomanNumber));
         }
+        
+        [TestCase(555, "DLV")]
+        public void cannot_repeat_base_five_symbols(int givenNumber, string expectedRomanNumber)
+        {
+            Assert.That(RomanNumberConverter.Convert(givenNumber), Is.EqualTo(expectedRomanNumber));
+        }
     }
 }
