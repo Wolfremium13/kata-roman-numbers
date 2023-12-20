@@ -8,7 +8,7 @@ namespace kata_roman_numbers
         {
             if (givenNumber == 0)
             {
-                return "";
+                return GetRomanNumber(givenNumber);
             }
 
             if (givenNumber < 4)
