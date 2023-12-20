@@ -4,7 +4,7 @@ namespace kata_roman_numbers
     {
         public static string Convert(int i)
         {
-            return "";
+            return "I";
         }
     }
 }
