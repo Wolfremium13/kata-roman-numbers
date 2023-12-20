@@ -5,31 +5,26 @@ namespace kata_roman_numbers
     [TestFixture]
     public class RomanNumberConverterShould
     {
-        [Test]
-        public void convert_decimal_to_roman()
+        [TestCase(0, "")]
+        [TestCase(1, "I")]
+        [TestCase(5, "V")]
+        [TestCase(10, "X")]
+        [TestCase(50, "L")]
+        [TestCase(100, "C")]
+        [TestCase(500, "D")]
+        [TestCase(1000, "M")]
+        public void convert_decimal_to_roman(int givenNumber, string expectedRomanNumber)
         {
-            Assert.That(RomanNumberConverter.Convert(0), Is.EqualTo(""));
-            Assert.That(RomanNumberConverter.Convert(1), Is.EqualTo("I"));
-            Assert.That(RomanNumberConverter.Convert(5), Is.EqualTo("V"));
-            Assert.That(RomanNumberConverter.Convert(10), Is.EqualTo("X"));
-            Assert.That(RomanNumberConverter.Convert(50), Is.EqualTo("L"));
-            Assert.That(RomanNumberConverter.Convert(100), Is.EqualTo("C"));
-            Assert.That(RomanNumberConverter.Convert(500), Is.EqualTo("D"));
-            Assert.That(RomanNumberConverter.Convert(1000), Is.EqualTo("M"));
+            Assert.That(RomanNumberConverter.Convert(givenNumber), Is.EqualTo(expectedRomanNumber));
         }
-        
-        [Test]
-        public void support_adding_until_three_repetitions()
+
+        [TestCase(3, "III")]
+        [TestCase(13, "XIII")]
+        [TestCase(30, "XXX")]
+        [TestCase(80, "LXXX")]
+        public void support_adding_until_three_repetitions(int givenNumber, string expectedRomanNumber)
         {
-            Assert.That(RomanNumberConverter.Convert(2), Is.EqualTo("II"));
-            Assert.That(RomanNumberConverter.Convert(3), Is.EqualTo("III"));
-            Assert.That(RomanNumberConverter.Convert(6), Is.EqualTo("VI"));
-            Assert.That(RomanNumberConverter.Convert(7), Is.EqualTo("VII"));
-            Assert.That(RomanNumberConverter.Convert(8), Is.EqualTo("VIII"));
-            Assert.That(RomanNumberConverter.Convert(11), Is.EqualTo("XI"));
-            Assert.That(RomanNumberConverter.Convert(12), Is.EqualTo("XII"));
-            Assert.That(RomanNumberConverter.Convert(13), Is.EqualTo("XIII"));
-            Assert.That(RomanNumberConverter.Convert(80), Is.EqualTo("LXXX"));
+            Assert.That(RomanNumberConverter.Convert(givenNumber), Is.EqualTo(expectedRomanNumber));
         }
     }
 }
