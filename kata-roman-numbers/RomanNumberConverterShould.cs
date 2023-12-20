@@ -19,7 +19,7 @@ namespace kata_roman_numbers
         }
         
         [Test]
-        public void support_adding()
+        public void support_adding_until_three_repetitions()
         {
             Assert.That(RomanNumberConverter.Convert(2), Is.EqualTo("II"));
             Assert.That(RomanNumberConverter.Convert(3), Is.EqualTo("III"));
