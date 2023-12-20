@@ -6,6 +6,8 @@ namespace kata_roman_numbers
         {
             switch (givenNumber)
             {
+                case 1:
+                    return "I";
                 case 2:
                     return "II";
                 case 3:
@@ -23,7 +25,7 @@ namespace kata_roman_numbers
                 case 1000:
                     return "M";
                 default:
-                    return "I";
+                    return "";
             }
         }
     }
