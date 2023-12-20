@@ -13,7 +13,7 @@ namespace kata_roman_numbers
         [TestCase(100, "C")]
         [TestCase(500, "D")]
         [TestCase(1000, "M")]
-        public void convert_decimal_to_roman(int givenNumber, string expectedRomanNumber)
+        public void convert_decimal_to_roman_directly(int givenNumber, string expectedRomanNumber)
         {
             Assert.That(RomanNumberConverter.Convert(givenNumber), Is.EqualTo(expectedRomanNumber));
         }
@@ -22,7 +22,7 @@ namespace kata_roman_numbers
         [TestCase(13, "XIII")]
         [TestCase(30, "XXX")]
         [TestCase(80, "LXXX")]
-        public void support_adding_until_three_repetitions(int givenNumber, string expectedRomanNumber)
+        public void support_adding_until_three_repetitions_for_x_and_i(int givenNumber, string expectedRomanNumber)
         {
             Assert.That(RomanNumberConverter.Convert(givenNumber), Is.EqualTo(expectedRomanNumber));
         }
@@ -35,7 +35,8 @@ namespace kata_roman_numbers
         [TestCase(90, "XC")]
         [TestCase(400, "CD")]
         [TestCase(900, "CM")]
-        public void support_subtracting_until_three_repetitions(int givenNumber, string expectedRomanNumber)
+        [TestCase(1999, "MCMXCIX")]
+        public void support_subtracting_until_one_repetition_from_base_one_direct_previous_unit(int givenNumber, string expectedRomanNumber)
         {
             Assert.That(RomanNumberConverter.Convert(givenNumber), Is.EqualTo(expectedRomanNumber));
         }
