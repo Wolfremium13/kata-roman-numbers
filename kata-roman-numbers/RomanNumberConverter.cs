@@ -8,6 +8,10 @@ namespace kata_roman_numbers
             {
                 return "V";
             }
+            if (givenNumber == 10)
+            {
+                return "X";
+            }
             return givenNumber == 2 ? "II" : "I";
         }
     }
