@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace kata_roman_numbers
 {
     public class RomanNumberConverter
@@ -8,31 +10,38 @@ namespace kata_roman_numbers
             {
                 return "";
             }
+
             if (givenNumber < 4)
             {
                 return "I" + Convert(givenNumber - 1);
             }
+
             if (givenNumber > 5 && givenNumber < 9)
             {
                 return "V" + Convert(givenNumber - 5);
             }
+
             if (givenNumber > 10 && givenNumber < 14)
             {
                 return "X" + Convert(givenNumber - 10);
             }
-            if (givenNumber == 5)
-                return "V";
-            if (givenNumber == 10)
-                return "X";
-            if (givenNumber == 50)
-                return "L";
-            if (givenNumber == 100)
-                return "C";
-            if (givenNumber == 500)
-                return "D";
-            if (givenNumber == 1000)
-                return "M";
-            return "";
+
+            return GetRomanNumber(givenNumber);
+        }
+
+        private static string GetRomanNumber(int givenNumber)
+        {
+            var romanNumbersMap = new Dictionary<int, string>
+            {
+                { 1, "I" },
+                { 5, "V" },
+                { 10, "X" },
+                { 50, "L" },
+                { 100, "C" },
+                { 500, "D" },
+                { 1000, "M" }
+            };
+            return romanNumbersMap.TryGetValue(givenNumber, out var romanNumber) ? romanNumber : "";
         }
     }
 }
