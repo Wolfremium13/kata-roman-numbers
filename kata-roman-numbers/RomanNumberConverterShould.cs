@@ -26,6 +26,9 @@ namespace kata_roman_numbers
             Assert.That(RomanNumberConverter.Convert(6), Is.EqualTo("VI"));
             Assert.That(RomanNumberConverter.Convert(7), Is.EqualTo("VII"));
             Assert.That(RomanNumberConverter.Convert(8), Is.EqualTo("VIII"));
+            Assert.That(RomanNumberConverter.Convert(11), Is.EqualTo("XI"));
+            Assert.That(RomanNumberConverter.Convert(12), Is.EqualTo("XII"));
+            Assert.That(RomanNumberConverter.Convert(13), Is.EqualTo("XIII"));
         }
     }
 }
