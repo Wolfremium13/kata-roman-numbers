@@ -20,7 +20,15 @@ namespace kata_roman_numbers
             {
                 return "C";
             }
-            return givenNumber == 2 ? "II" : "I";
+            if (givenNumber == 500)
+            {
+                return "D";
+            }
+            if (givenNumber == 1000)
+            {
+                return "M";
+            }
+            return "I";
         }
     }
 }
