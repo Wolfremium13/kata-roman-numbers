@@ -6,6 +6,8 @@ namespace kata_roman_numbers
         {
             switch (givenNumber)
             {
+                case 2:
+                    return "II";
                 case 5:
                     return "V";
                 case 10:
