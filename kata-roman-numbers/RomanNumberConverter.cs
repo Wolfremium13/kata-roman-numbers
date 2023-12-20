@@ -12,6 +12,10 @@ namespace kata_roman_numbers
             {
                 return "I" + Convert(givenNumber - 1);
             }
+            if (givenNumber > 5 && givenNumber < 9)
+            {
+                return "V" + Convert(givenNumber - 5);
+            }
             if (givenNumber == 5)
                 return "V";
             if (givenNumber == 10)
