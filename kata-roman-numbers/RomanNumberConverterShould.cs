@@ -9,6 +9,7 @@ namespace kata_roman_numbers
         public void convert_decimal_to_roman()
         {
             Assert.That(RomanNumberConverter.Convert(1), Is.EqualTo("I"));
+            Assert.That(RomanNumberConverter.Convert(2), Is.EqualTo("II"));
         }
     }
 }
