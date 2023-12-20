@@ -26,5 +26,18 @@ namespace kata_roman_numbers
         {
             Assert.That(RomanNumberConverter.Convert(givenNumber), Is.EqualTo(expectedRomanNumber));
         }
+        
+        [TestCase(4, "IV")]
+        [TestCase(9, "IX")]
+        [TestCase(14, "XIV")]
+        [TestCase(19, "XIX")]
+        [TestCase(40, "XL")]
+        [TestCase(90, "XC")]
+        [TestCase(400, "CD")]
+        [TestCase(900, "CM")]
+        public void support_subtracting_until_three_repetitions(int givenNumber, string expectedRomanNumber)
+        {
+            Assert.That(RomanNumberConverter.Convert(givenNumber), Is.EqualTo(expectedRomanNumber));
+        }
     }
 }
