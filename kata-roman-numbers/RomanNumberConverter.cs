@@ -4,29 +4,27 @@ namespace kata_roman_numbers
     {
         public static string Convert(int givenNumber)
         {
-            switch (givenNumber)
+            if (givenNumber == 0)
             {
-                case 1:
-                    return "I";
-                case 2:
-                    return "II";
-                case 3:
-                    return "III";
-                case 5:
-                    return "V";
-                case 10:
-                    return "X";
-                case 50:
-                    return "L";
-                case 100:
-                    return "C";
-                case 500:
-                    return "D";
-                case 1000:
-                    return "M";
-                default:
-                    return "";
+                return "";
             }
+            if (givenNumber < 4)
+            {
+                return "I" + Convert(givenNumber - 1);
+            }
+            if (givenNumber == 5)
+                return "V";
+            if (givenNumber == 10)
+                return "X";
+            if (givenNumber == 50)
+                return "L";
+            if (givenNumber == 100)
+                return "C";
+            if (givenNumber == 500)
+                return "D";
+            if (givenNumber == 1000)
+                return "M";
+            return "";
         }
     }
 }
