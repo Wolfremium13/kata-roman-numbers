@@ -21,6 +21,7 @@ namespace kata_roman_numbers
         public void support_adding()
         {
             Assert.That(RomanNumberConverter.Convert(2), Is.EqualTo("II"));
+            Assert.That(RomanNumberConverter.Convert(3), Is.EqualTo("III"));
         }
     }
 }
